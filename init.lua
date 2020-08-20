@@ -13,8 +13,6 @@ hyper.install('F18')
 hs.window.animationDuration = 0
 hs.loadSpoon("WinWin")
 
-
-
 -- focus left, right, up, down
 hyper.bindKey("H", function() 
 	hs.window.filter.focusWest()
@@ -70,12 +68,11 @@ hyper.bindKey("B", function()
 	win:moveToScreen(win:screen():next())
 end)
 
--- minimize
+-- maximize
 hyper.bindKey("M", function()
   local win = hs.window.focusedWindow();
   win:maximize()
 end)
-
 
 
 
@@ -111,7 +108,7 @@ local applicationHotkeys = {
   e = 'Mail',
   s = 'System Preferences',
   n = 'Notes',
-  v = 'MacVim',
+  v = 'Visual Studio Code',
 }
 
 for key, app in pairs(applicationHotkeys) do
@@ -120,7 +117,6 @@ for key, app in pairs(applicationHotkeys) do
 	  --myLaunchOrFocus(app)
   end)
 end
-
 
 -- SLEEP and LOCK 
 hyper.bindShiftKey("S", function() hs.caffeinate.systemSleep() end)
@@ -135,7 +131,6 @@ function muteOnWake(eventType)
 end
 caffeinateWatcher = hs.caffeinate.watcher.new(muteOnWake)
 caffeinateWatcher:start()
-
 
 -- MOVE BETWEEN SPACES
 require('spaces')
