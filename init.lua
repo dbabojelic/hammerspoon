@@ -104,10 +104,7 @@ end
 -- moras bas stavit puna imena, prava imena
 local applicationHotkeys = {
   w = 'Firefox',
-  i = 'iTerm',
-  e = 'Mail',
-  s = 'System Preferences',
-  n = 'Notes',
+  u = 'WhatsApp',
   v = 'Visual Studio Code',
 }
 
@@ -117,6 +114,7 @@ for key, app in pairs(applicationHotkeys) do
 	  --myLaunchOrFocus(app)
   end)
 end
+hyper.bindKey('return', function() hs.application.launchOrFocus('iTerm') end)
 
 -- SLEEP and LOCK 
 hyper.bindShiftKey("S", function() hs.caffeinate.systemSleep() end)
