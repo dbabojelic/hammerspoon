@@ -10,8 +10,8 @@ local hyper = require('hyper')
 hyper.install('F18')
 
 -- WIN MANAGEMENT
-hs.window.animationDuration = 0
 hs.loadSpoon("WinWin")
+hs.window.animationDuration = 0
 
 -- focus left, right, up, down
 hyper.bindKey("H", function() 
@@ -53,6 +53,20 @@ hyper.bindKey("3", function()
 end)
 hyper.bindKey("4", function() 
 	spoon.WinWin:moveAndResize("cornerSE")
+end)
+
+-- resizing
+hyper.bindCommandShiftKey("H", function()
+    spoon.WinWin:stepResize("left")
+end)
+hyper.bindCommandShiftKey("L", function()
+    spoon.WinWin:stepResize("right")
+end)
+hyper.bindCommandShiftKey("J", function()
+    spoon.WinWin:stepResize("down")
+end)
+hyper.bindCommandShiftKey("K", function()
+    spoon.WinWin:stepResize("up")
 end)
 
 -- fullscreen
