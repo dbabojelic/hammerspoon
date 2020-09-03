@@ -120,6 +120,7 @@ local applicationHotkeys = {
   w = 'Firefox',
   u = 'WhatsApp',
   v = 'Visual Studio Code',
+  c = 'Calendar',
 }
 
 for key, app in pairs(applicationHotkeys) do
