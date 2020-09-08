@@ -70,10 +70,10 @@ hyper.bindCommandShiftKey("K", function()
 end)
 
 -- fullscreen
-hyper.bindKey("F", function()
-  local win = hs.window.focusedWindow();
-  win:toggleFullScreen()
-end)
+-- hyper.bindKey("F", function()
+--   local win = hs.window.focusedWindow();
+--   win:toggleFullScreen()
+-- end)
 
 
 -- moving to another screen
@@ -121,6 +121,9 @@ local applicationHotkeys = {
   u = 'WhatsApp',
   v = 'Visual Studio Code',
   c = 'Calendar',
+  s = 'Slack',
+  e = 'Mail',
+  f = 'Finder',
 }
 
 for key, app in pairs(applicationHotkeys) do
