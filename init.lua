@@ -16,18 +16,18 @@ hs.window.animationDuration = 0
 -- focus left, right, up, down
 -- does not work as expected
 --
--- hyper.bindKey("H", function() 
--- 	hs.window.filter.focusWest()
--- end)
--- hyper.bindKey("K", function() 
--- 	hs.window.filter.focusNorth()
--- end)
--- hyper.bindKey("J", function() 
--- 	hs.window.filter.focusSouth()
--- end)
--- hyper.bindKey("L", function() 
--- 	hs.window.filter.focusEast()
--- end)
+hyper.bindKey("H", function() 
+	hs.window.filter.focusWest()
+end)
+hyper.bindKey("K", function() 
+	hs.window.filter.focusNorth()
+end)
+hyper.bindKey("J", function() 
+	hs.window.filter.focusSouth()
+end)
+hyper.bindKey("L", function() 
+	hs.window.filter.focusEast()
+end)
 
 -- move left, right, up, down
 hyper.bindShiftKey("H", function() 
