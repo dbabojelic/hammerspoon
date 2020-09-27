@@ -16,18 +16,18 @@ hs.window.animationDuration = 0
 -- focus left, right, up, down
 -- does not work as expected
 --
-hyper.bindKey("H", function() 
-	hs.window.filter.focusWest()
-end)
-hyper.bindKey("K", function() 
-	hs.window.filter.focusNorth()
-end)
-hyper.bindKey("J", function() 
-	hs.window.filter.focusSouth()
-end)
-hyper.bindKey("L", function() 
-	hs.window.filter.focusEast()
-end)
+-- hyper.bindKey("H", function() 
+-- 	hs.window.filter.focusWest()
+-- end)
+-- hyper.bindKey("K", function() 
+-- 	hs.window.filter.focusNorth()
+-- end)
+-- hyper.bindKey("J", function() 
+-- 	hs.window.filter.focusSouth()
+-- end)
+-- hyper.bindKey("L", function() 
+-- 	hs.window.filter.focusEast()
+-- end)
 
 -- move left, right, up, down
 hyper.bindShiftKey("H", function() 
@@ -95,37 +95,38 @@ end)
 -- APPLICATION CHOOSER
 
 -- in progress
-myLaunchOrFocus = function(appName) 
-	local win = hs.window.focusedWindow();
-	local app = win:application();
+-- myLaunchOrFocus = function(appName) 
+-- 	local win = hs.window.focusedWindow();
+-- 	local app = win:application();
 
-	hs.notify.new({title="appName!", informativeText=appName}):send()
-	hs.notify.new({title="app:name!", informativeText=app:name()}):send()
-	if app:name() == appName then
-		local wf = hs.window.filter
-		wf_app = wf.new{app:name()}
-		wins = wf_app:getWindows(hs.window.filter.sortByFocused)
-		wins[2]:focus()
-		hs.notify.new({title="OK!", informativeText=wins[1]:title()}):send()
-	else
-		hs.notify.new({title="NOT OK!", informativeText="bla"}):send()
-		if appName ~= "iTerm2" then
-			hs.application.launchOrFocus(appName)
-		else
-			hs.application.launchOrFocus("iTerm")
-		end
-	end
-end
+-- 	hs.notify.new({title="appName!", informativeText=appName}):send()
+-- 	hs.notify.new({title="app:name!", informativeText=app:name()}):send()
+-- 	if app:name() == appName then
+-- 		local wf = hs.window.filter
+-- 		wf_app = wf.new{app:name()}
+-- 		wins = wf_app:getWindows(hs.window.filter.sortByFocused)
+-- 		wins[2]:focus()
+-- 		hs.notify.new({title="OK!", informativeText=wins[1]:title()}):send()
+-- 	else
+-- 		hs.notify.new({title="NOT OK!", informativeText="bla"}):send()
+-- 		if appName ~= "iTerm2" then
+-- 			hs.application.launchOrFocus(appName)
+-- 		else
+-- 			hs.application.launchOrFocus("iTerm")
+-- 		end
+-- 	end
+-- end
 
 -- moras bas stavit puna imena, prava imena
 local applicationHotkeys = {
   w = 'Firefox',
   u = 'WhatsApp',
   v = 'Visual Studio Code',
-  c = 'Calendar',
+  c = 'Google Chrome',
   s = 'Slack',
   e = 'Mail',
   f = 'Finder',
+  l = 'Spotify',
 }
 
 for key, app in pairs(applicationHotkeys) do
@@ -154,15 +155,4 @@ caffeinateWatcher:start()
 require('spaces')
 hyper.bindShiftKey("left", function() moveWindowOneSpace("left", true) end)
 hyper.bindShiftKey("right", function() moveWindowOneSpace("right", true) end)
-
-
-
-
-
-
-
-
-
-
-
 
