@@ -119,14 +119,16 @@ end)
 
 -- moras bas stavit puna imena, prava imena
 local applicationHotkeys = {
-  w = 'Firefox',
   u = 'WhatsApp',
   v = 'Visual Studio Code',
-  c = 'Google Chrome',
+  w = 'Google Chrome',
   s = 'Slack',
   e = 'Mail',
   f = 'Finder',
   l = 'Spotify',
+  n = 'Notes',
+  c = 'Calendar',
+  i = 'Simulator',
 }
 
 for key, app in pairs(applicationHotkeys) do
