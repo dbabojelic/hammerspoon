@@ -129,6 +129,7 @@ local applicationHotkeys = {
   n = 'Notes',
   c = 'Calendar',
   i = 'Simulator',
+  t = "Typora",
 }
 
 for key, app in pairs(applicationHotkeys) do
