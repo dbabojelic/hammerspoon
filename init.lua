@@ -153,9 +153,3 @@ function muteOnWake(eventType)
 end
 caffeinateWatcher = hs.caffeinate.watcher.new(muteOnWake)
 caffeinateWatcher:start()
-
--- MOVE BETWEEN SPACES
-require('spaces')
-hyper.bindShiftKey("left", function() moveWindowOneSpace("left", true) end)
-hyper.bindShiftKey("right", function() moveWindowOneSpace("right", true) end)
-
