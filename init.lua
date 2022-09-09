@@ -4,7 +4,6 @@ spoon.ReloadConfiguration:start()
 
 hs.notify.new({title="Hammerspoon", informativeText="Config loaded"}):send()
 
-
 -- INSTALL HYPER KEY
 local hyper = require('hyper')
 hyper.install('F18')
@@ -12,22 +11,6 @@ hyper.install('F18')
 -- WIN MANAGEMENT
 hs.loadSpoon("WinWin")
 hs.window.animationDuration = 0
-
--- focus left, right, up, down
--- does not work as expected
---
--- hyper.bindKey("H", function() 
--- 	hs.window.filter.focusWest()
--- end)
--- hyper.bindKey("K", function() 
--- 	hs.window.filter.focusNorth()
--- end)
--- hyper.bindKey("J", function() 
--- 	hs.window.filter.focusSouth()
--- end)
--- hyper.bindKey("L", function() 
--- 	hs.window.filter.focusEast()
--- end)
 
 -- move left, right, up, down
 hyper.bindShiftKey("H", function() 
@@ -71,13 +54,6 @@ hyper.bindCommandShiftKey("K", function()
     spoon.WinWin:stepResize("up")
 end)
 
--- fullscreen
--- hyper.bindKey("F", function()
---   local win = hs.window.focusedWindow();
---   win:toggleFullScreen()
--- end)
-
-
 -- moving to another screen
 hyper.bindKey("B", function()
 	local win = hs.window.focusedWindow();
@@ -90,34 +66,6 @@ hyper.bindKey("M", function()
   win:maximize()
 end)
 
-
-
--- APPLICATION CHOOSER
-
--- in progress
--- myLaunchOrFocus = function(appName) 
--- 	local win = hs.window.focusedWindow();
--- 	local app = win:application();
-
--- 	hs.notify.new({title="appName!", informativeText=appName}):send()
--- 	hs.notify.new({title="app:name!", informativeText=app:name()}):send()
--- 	if app:name() == appName then
--- 		local wf = hs.window.filter
--- 		wf_app = wf.new{app:name()}
--- 		wins = wf_app:getWindows(hs.window.filter.sortByFocused)
--- 		wins[2]:focus()
--- 		hs.notify.new({title="OK!", informativeText=wins[1]:title()}):send()
--- 	else
--- 		hs.notify.new({title="NOT OK!", informativeText="bla"}):send()
--- 		if appName ~= "iTerm2" then
--- 			hs.application.launchOrFocus(appName)
--- 		else
--- 			hs.application.launchOrFocus("iTerm")
--- 		end
--- 	end
--- end
-
--- moras bas stavit puna imena, prava imena
 local applicationHotkeys = {
   u = 'WhatsApp',
   v = 'Visual Studio Code',
@@ -135,14 +83,12 @@ local applicationHotkeys = {
 for key, app in pairs(applicationHotkeys) do
   hyper.bindKey(key, function()
 	  hs.application.launchOrFocus(app)
-	  --myLaunchOrFocus(app)
   end)
 end
 hyper.bindKey('return', function() hs.application.launchOrFocus('iTerm') end)
 
 -- SLEEP and LOCK 
 hyper.bindShiftKey("S", function() hs.caffeinate.systemSleep() end)
-hyper.bindShiftKey("9", function() hs.caffeinate.lockScreen() end)
 
 -- MUTE ON WAKE
 function muteOnWake(eventType)
